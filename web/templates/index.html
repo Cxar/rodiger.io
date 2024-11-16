@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Rodiger.io</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <main
+        id="content"
+        hx-get="/content"
+        hx-trigger="sse:contentUpdated from:body"
+        hx-swap="innerHTML"
+      >
+        {{.Content}}
+      </main>
+
+      <footer>
+        <p>Last updated: {{.LastUpdate.Format "January 2, 2006"}}</p>
+      </footer>
+    </div>
+    <div hx-ext="sse" sse-connect="/updates" sse-swap="none"></div>
+  </body>
+</html>

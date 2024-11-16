@@ -1,0 +1,220 @@
+:root {
+  --bg: #1a1b26; /* Dark background */
+  --bg2: #24283b; /* Slightly lighter background */
+  --fg: #c0caf5; /* Bright text */
+  --gray: #565f89; /* Muted text */
+
+  /* Tokyo Night's more vibrant colors */
+  --h1: #f7768e; /* Vivid pink-red */
+  --h2: #7aa2f7; /* Electric blue */
+  --h3: #ff9e64; /* Orange-coral */
+
+  /* Other colors */
+  --red: #f7768e;
+  --green: #9ece6a;
+  --yellow: #e0af68;
+  --link: #7dcfff; /* Bright cyan */
+  --border: #292e43;
+}
+
+/* Base styles */
+body {
+  font-family: "IBM Plex Mono", "Roboto Mono", ui-monospace, "Cascadia Code",
+    "Segoe UI Mono", "Ubuntu Mono", Menlo, Monaco, Consolas, monospace;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--fg);
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* Content area */
+main {
+  padding: 1rem 0;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin: 2.5rem 0 1.5rem;
+  color: var(--h1);
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin: 2rem 0 1rem;
+  color: var(--h2);
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0.8rem;
+  color: var(--h3);
+}
+
+p {
+  margin: 1.2rem 0;
+}
+
+/* Links */
+a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(115, 220, 202, 0.2);
+  transition: border-color 0.2s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--link);
+}
+
+/* Code blocks */
+code {
+  font-family: inherit;
+  font-size: 0.9em;
+  background: var(--bg2);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  color: var(--yellow);
+}
+
+pre {
+  background: var(--bg2);
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 1px solid var(--border);
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  color: var(--fg);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 1.5rem 0;
+  padding: 0.5rem 0 0.5rem 1.2rem;
+  color: var(--gray);
+}
+
+/* Lists */
+ul,
+ol {
+  padding-left: 1.5rem;
+  margin: 1.2rem 0;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9em;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+th {
+  background: var(--bg2);
+  font-weight: 600;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  display: block;
+}
+
+/* Selection */
+::selection {
+  background: var(--h1);
+  color: var(--bg);
+}
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.875rem;
+}
+
+/* Print styles */
+@media print {
+  body {
+    font-size: 11pt;
+    background: white;
+    color: black;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  a {
+    color: black;
+    border-bottom: none;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
