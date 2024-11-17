@@ -1,14 +1,12 @@
-# fly.toml app configuration file generated for rodiger-io on 2024-11-16T17:35:22-05:00
+# fly.toml app configuration file generated for rodiger-io-lively-sunset-9275 on 2024-11-16T18:32:15-05:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'rodiger-io'
+app = 'rodiger-io-lively-sunset-9275'
 primary_region = 'ewr'
 
 [build]
-  [build.args]
-    GO_VERSION = '1.23.3'
 
 [env]
   PORT = '8080'
