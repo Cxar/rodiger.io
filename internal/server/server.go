@@ -67,6 +67,8 @@ func New(cfg *config.Config) (*Server, error) {
 }
 
 func (s *Server) Start() error {
+	// Update content immediately before starting server
+	s.updateContent()
 	go s.contentUpdater()
 	return s.srv.ListenAndServe()
 }
